@@ -9,14 +9,22 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end
 
 @implementation ViewController
 
+-(IBAction)progressChanged:(id)sender
+{
+    UISlider *slider = (UISlider *)sender;
+    _label.text = [NSString stringWithFormat:@"value:%f",slider.value];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
